@@ -5,7 +5,7 @@
 			"name": "Python Console App",
 			"type": "python",
 			"request": "launch",
-			"stopOnEntry": true,
+			"stopOnEntry": false,
 			"program": "${file}",
 			"externalConsole": true,
 			"debugOptions": [
