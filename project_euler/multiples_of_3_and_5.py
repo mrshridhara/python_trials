@@ -12,9 +12,11 @@ def get_multiples_of_3_or_5(limit):
         if i % 3 == 0 or i % 5 == 0:
             yield i
 
+
 def run(limit):
-    print('Sum of all the multiples of 3 or 5 below ' + str(limit) + ':')
+    print('Sum of all the multiples of 3 or 5 below {}:'.format(limit))
     print(sum(get_multiples_of_3_or_5(limit)))
+
 
 if __name__ == '__main__':
     run(1000)

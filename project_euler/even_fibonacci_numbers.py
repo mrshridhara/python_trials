@@ -10,6 +10,7 @@ find the sum of the even-valued terms.
 https://projecteuler.net/problem=2
 """
 
+
 def get_even_valued_fibonacci_sequence(limit):
     (first, second) = (1, 2)
 
@@ -18,9 +19,11 @@ def get_even_valued_fibonacci_sequence(limit):
             yield second
         (first, second) = (second, first + second)
 
+
 def run(limit):
-    print('Sum of the even-valued fibonacci terms below ' + str(limit) + ':')
+    print('Sum of the even-valued fibonacci terms below {}:'.format(limit))
     print(sum(get_even_valued_fibonacci_sequence(limit)))    
+
 
 if __name__ == '__main__':
     run(4000000)
