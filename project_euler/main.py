@@ -3,15 +3,14 @@ Entry point of the application.
 """
 
 
-print('Project Euler (https://projecteuler.net/)')
-
-
 def try_run(module, arg):
     try:
         module.run(arg)
     except Exception as e:
         print('Error: {}'.format(e))
 
+
+print('Project Euler (https://projecteuler.net/)')
 
 options = [('1', 'Multiples of 3 and 5'),
            ('2', 'Even Fibonacci Numbers'),

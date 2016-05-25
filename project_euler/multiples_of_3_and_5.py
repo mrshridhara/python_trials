@@ -7,6 +7,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 https://projecteuler.net/problem=1
 """
 
+
 def get_multiples_of_3_or_5(limit):
     for i in range(limit):
         if i % 3 == 0 or i % 5 == 0:
