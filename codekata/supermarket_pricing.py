@@ -1,2 +1,2 @@
 def run():
-    raise NotImplementedError()
+    raise NotImplementedError("This function is not yet implemented.")
