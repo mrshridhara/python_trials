@@ -2,12 +2,19 @@
 Entry point of the application.
 """
 
+import os
 
 def try_run(module):
     try:
         module.run()
     except Exception as e:
         print('Error: {}'.format(e))
+
+
+def print_problem_statement(module):
+    os.system('cls')
+    print('PROBLEM STATEMENT:')
+    print(module.__doc__)
 
 
 print('CodeKata (http://codekata.com/)')
@@ -26,6 +33,7 @@ while True:
 
     elif choice == '1':
         import supermarket_pricing
+        print_problem_statement(supermarket_pricing)
         try_run(supermarket_pricing)
 
     else:

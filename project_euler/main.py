@@ -2,12 +2,19 @@
 Entry point of the application.
 """
 
+import os
 
 def try_run(module, arg):
     try:
         module.run(arg)
     except Exception as e:
         print('Error: {}'.format(e))
+
+
+def print_problem_statement(module):
+    os.system('cls')
+    print('PROBLEM STATEMENT:')
+    print(module.__doc__)
 
 
 print('Project Euler (https://projecteuler.net/)')
@@ -29,21 +36,25 @@ while True:
 
     elif choice == '1':
         import multiples_of_3_and_5
+        print_problem_statement(multiples_of_3_and_5)
         limit = int(input('Enter the limit: '))
         try_run(multiples_of_3_and_5, limit)
 
     elif choice == '2':
         import even_fibonacci_numbers
+        print_problem_statement(even_fibonacci_numbers)
         limit = int(input('Enter the limit: '))
         try_run(even_fibonacci_numbers, limit)
 
     elif choice == '3':
         import largest_prime_factor
+        print_problem_statement(largest_prime_factor)
         num = int(input('Enter a number: '))
         try_run(largest_prime_factor, num)
 
     elif choice == '4':
         import largest_palindrome_product
+        print_problem_statement(largest_palindrome_product)
         digits = int(input('Enter number of digits: '))
         try_run(largest_palindrome_product, digits)
 
