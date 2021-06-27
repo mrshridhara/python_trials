@@ -1,9 +1,9 @@
 """
-The prime factors of 13195 are 5, 7, 13 and 29.
+Problem: https://projecteuler.net/problem=3
 
-What is the largest prime factor of the number 600851475143 ?
+    The prime factors of 13195 are 5, 7, 13 and 29.
 
-https://projecteuler.net/problem=3
+    What is the largest prime factor of the number 600851475143 ?
 """
 
 
@@ -26,10 +26,7 @@ def get_largest_prime_factor(num):
     return max(get_prime_factors(num))
 
 
-def run(num):
-    print('Largest prime factor of {}:'.format(num))
-    print(get_largest_prime_factor(num))
-
-
 if __name__ == '__main__':
-    run(600851475143)
+    print(__doc__)
+    solution = get_largest_prime_factor(600851475143)
+    print('Solution: {}'.format(solution))

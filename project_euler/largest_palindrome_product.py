@@ -1,10 +1,10 @@
 """
-A palindromic number reads the same both ways. The largest palindrome made from
-the product of two 2-digit numbers is 9009 = 91 × 99.
+Problem: https://projecteuler.net/problem=4
 
-Find the largest palindrome made from the product of two 3-digit numbers.
+    A palindromic number reads the same both ways. The largest palindrome made from
+    the product of two 2-digit numbers is 9009 = 91 × 99.
 
-https://projecteuler.net/problem=4
+    Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
 
@@ -12,10 +12,7 @@ def get_largest_palindrome_product(limit):
     raise NotImplementedError()
 
 
-def run(digits):
-    print('Largest palindrome product of {} digits:'.format(digits))
-    print(get_largest_palindrome_product(digits))   
-
-
 if __name__ == '__main__':
-    run(3)
+    print(__doc__)
+    solution = get_largest_palindrome_product(3)
+    print('Solution: {}'.format(solution))
