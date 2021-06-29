@@ -2,38 +2,40 @@
 
 {% block content %}
 <div class="accordion" id="problem_groups">
-    {% for grp_id in problem_groups %}
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="header_{{ grp_id }}">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse_{{ grp_id }}" aria-expanded="true" aria-controls="collapse_{{ grp_id }}">
-                {{ problem_groups[grp_id].name }}
-            </button>
-        </h2>
+  {% for grp_id in problem_groups %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading_{{ grp_id }}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapse_{{ grp_id }}" aria-expanded="false" aria-controls="collapse_{{ grp_id }}">
+        {{ problem_groups[grp_id].name }}
+      </button>
+    </h2>
+    <div id="collapse_{{ grp_id }}" class="accordion-collapse collapse" aria-labelledby="heading_{{ grp_id }}"
+      data-bs-parent="#problem_groups">
+      <div class="accordion-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prob_id in problem_groups[grp_id].problems %}
+            <tr>
+              <td>
+                <a href="/problems/{{ grp_id }}/{{ prob_id }}">{{ problem_groups[grp_id].problems[prob_id].name }}</a>
+              </td>
+              <td>
+                <pre><code>{{ problem_groups[grp_id].problems[prob_id].description }}</code></pre>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div id="collapse_{{ grp_id }}" class="accordion-collapse collapse" aria-labelledby="header_{{ grp_id }}"
-        data-bs-parent="#problem_groups">
-        <div class="accordion-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for prob_id in problem_groups[grp_id].problems %}
-                    <tr>
-                        <td><a href="/problems/{{ grp_id }}/{{ prob_id }}">{{ problem_groups[grp_id].problems[prob_id].name }}</a></td>
-                        <td>
-                            <pre><code>{{ problem_groups[grp_id].problems[prob_id].description }}</code></pre>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}
