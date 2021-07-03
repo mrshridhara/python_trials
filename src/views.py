@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from flask import render_template
 
-from . import app
+from . import app, current_year
 from .domain.types import problem_groups
 
 
@@ -11,7 +9,7 @@ def home():
     return render_template(
         "problem_list.html",
         title="Problems List",
-        current_year=datetime.now().year,
+        current_year=current_year,
         problem_groups=problem_groups
     )
 
@@ -23,6 +21,6 @@ def problem_details(group_id, id):
     return render_template(
         "problem_details.html",
         title="Problem Details",
-        current_year=datetime.now().year,
+        current_year=current_year,
         problem=problem
     )
