@@ -1,7 +1,7 @@
 from flask import render_template
 
 from . import app, current_year
-from .domain.types import problem_groups
+from .types import problem_groups
 
 
 @app.route("/")
