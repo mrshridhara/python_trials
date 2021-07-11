@@ -24,7 +24,7 @@
             {% for prob_id in problem_groups[grp_id].problems %}
             <tr>
               <td>
-                <a href="/problems/{{ grp_id }}/{{ prob_id }}">{{ problem_groups[grp_id].problems[prob_id].name }}</a>
+                <a href="/{{ grp_id }}/{{ prob_id }}">{{ problem_groups[grp_id].problems[prob_id].name }}</a>
               </td>
               <td>
                 <pre><code>{{ problem_groups[grp_id].problems[prob_id].description }}</code></pre>

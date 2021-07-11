@@ -14,7 +14,7 @@ def home():
     )
 
 
-@app.route("/problems/<group_id>/<id>")
+@app.route("/<group_id>/<id>")
 def problem_details(group_id, id):
     problem_group = problem_groups.get(group_id)
     if (problem_group is None):
@@ -34,7 +34,7 @@ def problem_details(group_id, id):
 
     return render_template(
         "problem_details.html",
-        title="Problem Details",
+        title=f"{problem.name} | {problem_group.name}",
         current_year=current_year,
         problem=problem
     )
