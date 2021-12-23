@@ -1,6 +1,6 @@
 {
-    "recommendations": [
-        "editorconfig.editorconfig",
-        "ms-python.python"
-    ]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "ms-python.python"
+  ]
 }
